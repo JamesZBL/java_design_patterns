@@ -35,9 +35,12 @@ public class Application {
 
   public static void main(String[] args) {
 
-    Person personWang = new Person.Builder().name("小王").age(25).nationality(Nationality.CHINA).skinColor(SkinColor.YELLOW).build();
-    Person personZhang = new Person.Builder().name("小张").age(28).nationality(Nationality.USA).skinColor(SkinColor.WHITE).build();
-    Person personLiu = new Person.Builder().name("老王").age(48).nationality(Nationality.JAPAN).skinColor(SkinColor.YELLOW).build();
+    Person personWang =
+            new Person.Builder().name("小王").age(25).nationality(Nationality.CHINA).skinColor(SkinColor.YELLOW).build();
+    Person personZhang =
+            new Person.Builder().name("小张").age(28).nationality(Nationality.USA).skinColor(SkinColor.WHITE).build();
+    Person personLiu =
+            new Person.Builder().name("老王").age(48).nationality(Nationality.JAPAN).skinColor(SkinColor.YELLOW).build();
 
     LOGGER.info(personWang.toString());
     LOGGER.info(personZhang.toString());

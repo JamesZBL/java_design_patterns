@@ -1,6 +1,7 @@
 
 # Java 实现的面向对象设计模式
 
+[![Build status](https://travis-ci.org/JamesZBL/java_design_patterns.svg?branch=master)](https://travis-ci.org/JamesZBL/java_design_patterns)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/JamesZBL/java_design_patterns/blob/master/LICENSE)
 
 # 介绍

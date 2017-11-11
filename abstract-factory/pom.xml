@@ -28,21 +28,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>java_design_patterns</artifactId>
+        <artifactId>builder</artifactId>
         <groupId>me.zbl</groupId>
         <version>1.11.9-SNAPSHOT</version>
+        <relativePath>../builder/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>builder</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <artifactId>abstract-factory</artifactId>
 
 
 </project>

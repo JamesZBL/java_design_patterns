@@ -59,6 +59,7 @@
             <artifactId>logback-core</artifactId>
             <version>${logback.version}</version>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>

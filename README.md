@@ -3,6 +3,7 @@
 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/JamesZBL/java_design_patterns/blob/master/LICENSE)
 [![Build status](https://travis-ci.org/JamesZBL/java_design_patterns.svg?branch=master)](https://travis-ci.org/JamesZBL/java_design_patterns)
+[![Coverage Status](https://coveralls.io/repos/github/JamesZBL/java_design_patterns/badge.svg?branch=master)](https://coveralls.io/github/JamesZBL/java_design_patterns?branch=master)
 
 ## 介绍
 

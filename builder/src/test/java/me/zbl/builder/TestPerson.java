@@ -1,4 +1,4 @@
-/**
+package me.zbl.builder; /**
  * MIT License
  * <p>
  * Copyright (c) 2017 James

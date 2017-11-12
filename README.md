@@ -26,3 +26,7 @@
 [Builder (创建者)](https://github.com/JamesZBL/java_design_patterns/tree/master/builder) 
 
 [Abstract Factory (抽象工厂)](https://github.com/JamesZBL/java_design_patterns/tree/master/abstract-factory)
+
+### 结构型模式
+
+[Adapter (适配器)]()

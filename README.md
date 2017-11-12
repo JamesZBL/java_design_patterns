@@ -23,4 +23,4 @@
 
 ### 构建型模式
 
-> [Builder (创建者)](https://github.com/JamesZBL/java_design_patterns/tree/develop/builder) 
+> [Builder (创建者)](https://github.com/JamesZBL/java_design_patterns/tree/master/builder) 

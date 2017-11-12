@@ -1,4 +1,4 @@
-package me.zbl.builder; /**
+/**
  * MIT License
  * <p>
  * Copyright (c) 2017 James
@@ -21,10 +21,8 @@ package me.zbl.builder; /**
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package me.zbl.builder;
 
-import me.zbl.builder.Nationality;
-import me.zbl.builder.Person;
-import me.zbl.builder.SkinColor;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

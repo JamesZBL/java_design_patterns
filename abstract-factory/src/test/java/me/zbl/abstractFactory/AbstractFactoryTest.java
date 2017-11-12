@@ -1,4 +1,4 @@
-package me.zbl.abstractFactory; /**
+/**
  * MIT License
  * <p>
  * Copyright (c) 2017 James
@@ -21,6 +21,7 @@ package me.zbl.abstractFactory; /**
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package me.zbl.abstractFactory;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -58,5 +59,11 @@ public class AbstractFactoryTest {
     assertEquals(ship.getDescription(), NewShip.DESCRIPTION);
     assertEquals(captain.getDescription(), YoungCaptain.DESCRIPTION);
     assertEquals(sailor.getDescription(), YoungSailor.DESCRIPTION);
+  }
+
+  @Test
+  public void testApplication() {
+    String[] args = {};
+    Application.main(args);
   }
 }

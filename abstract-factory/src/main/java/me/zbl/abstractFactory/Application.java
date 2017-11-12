@@ -51,6 +51,12 @@ public class Application {
     LOGGER.info(app.getmCaptain().getDescription());
     LOGGER.info(app.getmShip().getDescription());
     LOGGER.info(app.getmSailor().getDescription());
+
+    app.createTeam(new PermanentTeamFactory());
+    LOGGER.info("正在创建一支久经考验的队伍...");
+    LOGGER.info(app.getmCaptain().getDescription());
+    LOGGER.info(app.getmShip().getDescription());
+    LOGGER.info(app.getmSailor().getDescription());
   }
 
   public Ship getmShip() {

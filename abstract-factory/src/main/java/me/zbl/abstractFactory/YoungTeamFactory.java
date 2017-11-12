@@ -28,17 +28,14 @@ package me.zbl.abstractFactory;
  */
 public class YoungTeamFactory implements TeamFactory {
 
-  @Override
   public Ship createShip() {
     return new NewShip();
   }
 
-  @Override
   public Captain createCaptain() {
     return new YoungCaptain();
   }
 
-  @Override
   public Sailor createSailor() {
     return new YoungSailor();
   }

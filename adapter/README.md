@@ -18,5 +18,34 @@
 
 ## 模式分析
 
+> 假定现在有一个小汽车司机，他只会驾驶小型汽车，并不会驾驶公共汽车。
+>
+> 现在分别定义小汽车 ( Car ) 和公共汽车 ( Bus ) 两种接口
 
+```
+public interface Car {
+  void drive();
+}
+
+public class Bus {
+  private static final Logger LOGGER = LoggerFactory.getLogger(Bus.class);
+  public void run() {
+    LOGGER.info("公共汽车在行驶");
+  }
+}
+```
+> 这个司机需要获得一辆小汽车才能进行驾驶活动
+
+```
+public class Driver implements Car {
+  private Car car;
+  @Override
+  public void drive() {
+    car.drive();
+  }
+  public Driver(Car car) {
+    this.car = car;
+  }
+}
+```
 ## 适用场景

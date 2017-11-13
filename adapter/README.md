@@ -48,4 +48,30 @@ public class Driver implements Car {
   }
 }
 ```
+> 现在这个司机有急事，必须马上赶往公司，可是只借到了一辆公共汽车，并且车上没有任何人，
+现在必须马上将司机的驾驶小汽车的技能转化成驾驶公共汽车的技能
+
+```
+public class BusAdapter implements Car {
+
+  private Bus bus;
+
+  public BusAdapter() {
+    this.bus = new Bus();
+  }
+
+  @Override
+  public void drive() {
+    bus.run();
+  }
+}
+```
+> 经过技能转化，司机成功的驾驶公共汽车驶向了公司
+
 ## 适用场景
+
+>* 需要使用的类的接口与需要的接口类型不匹配
+>* 需要创建一个可重用的类，它可以与不相关的或不可预见的类进行协作，也就是说，
+类不一定具有兼容的接口
+>* 需要使用几个现有的子类，但是通过子类化每个子类来调整它们的接口是不切实际的。
+对象适配器可以调整其父类的接口。

@@ -24,7 +24,7 @@
 package me.zbl.factory.method;
 
 /**
- * 厨师类
+ * 厨师
  */
 public interface Cook {
 

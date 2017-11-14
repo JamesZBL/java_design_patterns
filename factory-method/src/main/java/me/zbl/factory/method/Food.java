@@ -24,7 +24,7 @@
 package me.zbl.factory.method;
 
 /**
- * 食物类
+ * 食物
  */
 public interface Food {
 

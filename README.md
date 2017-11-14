@@ -27,6 +27,8 @@
 
 [Abstract Factory (抽象工厂)](https://github.com/JamesZBL/java_design_patterns/tree/master/abstract-factory)
 
+[Factory Method (工厂方法)](https://github.com/JamesZBL/java_design_patterns/tree/master/factory-method)
+
 ### 结构型模式
 
 [Adapter (适配器)](https://github.com/JamesZBL/java_design_patterns/tree/master/adapter)

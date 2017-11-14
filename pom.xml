@@ -48,7 +48,7 @@
         <module>builder</module>
         <module>abstract-factory</module>
         <module>adapter</module>
-        <module>factorymethod</module>
+        <module>factory-method</module>
     </modules>
 
     <dependencies>

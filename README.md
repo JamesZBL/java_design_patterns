@@ -29,6 +29,8 @@
 
 [Factory Method (工厂方法)](https://github.com/JamesZBL/java_design_patterns/tree/master/factory-method)
 
+[Prototype (原型模式)](https://github.com/JamesZBL/java_design_patterns/tree/master/prototype)
+
 ### 结构型模式
 
 [Adapter (适配器)](https://github.com/JamesZBL/java_design_patterns/tree/master/adapter)

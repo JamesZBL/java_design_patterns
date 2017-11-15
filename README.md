@@ -35,4 +35,4 @@
 
 [Adapter (适配器)](https://github.com/JamesZBL/java_design_patterns/tree/master/adapter)
 
-## 行为模式
+### 行为模式

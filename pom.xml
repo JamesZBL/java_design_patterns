@@ -49,6 +49,7 @@
         <module>abstract-factory</module>
         <module>adapter</module>
         <module>factory-method</module>
+        <module>prototype</module>
     </modules>
 
     <dependencies>

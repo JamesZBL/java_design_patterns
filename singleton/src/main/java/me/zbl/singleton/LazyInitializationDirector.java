@@ -30,7 +30,7 @@ package me.zbl.singleton;
  * <p>
  * 这个方案是线程安全的
  */
-public class LazyInitializationDirector {
+public final class LazyInitializationDirector {
 
   /**
    * 私有构造方法
@@ -41,7 +41,7 @@ public class LazyInitializationDirector {
   /**
    * @return 单例实例
    */
-  public LazyInitializationDirector getInstance() {
+  public static LazyInitializationDirector getInstance() {
     return InstanceHolder.INSTANCE;
   }
 

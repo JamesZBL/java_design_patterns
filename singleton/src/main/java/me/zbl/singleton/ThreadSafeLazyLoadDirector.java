@@ -24,29 +24,26 @@
 package me.zbl.singleton;
 
 /**
- * “饿汉式” 的单例实现方式
- * <p>
- * 可以保证线程安全
+ * “懒汉式”的单例模式-线程安全的
  */
-public final class Director {
+public final class ThreadSafeLazyLoadDirector {
 
-  /**
-   * 静态的本类实例
-   */
-  private static final Director INSTANCE = new Director();
+  private static volatile ThreadSafeLazyLoadDirector INSTANCE;
 
-  /**
-   * 私有化的构造方法保证不被其它类调用
-   */
-  private Director() {
+  private ThreadSafeLazyLoadDirector() {
+    // 防止通过反射进行实例化
+    if (null != INSTANCE) {
+      throw new IllegalStateException("该实例已经存在");
+    }
   }
 
   /**
-   * 客户端调用获取单例实例
-   *
-   * @return 单例实例
+   * 此方法被第一次调用时才会生成单例实例，实现懒加载
    */
-  public static Director getInstance() {
+  public static synchronized ThreadSafeLazyLoadDirector getInstance() {
+    if (null == INSTANCE) {
+      INSTANCE = new ThreadSafeLazyLoadDirector();
+    }
     return INSTANCE;
   }
 }

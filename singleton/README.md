@@ -86,8 +86,10 @@ int b = 5;      //语句 C
 int c = a + b;  //语句 D
 ```
 > 可能会被重排成 A-C-B-D 或者 C-A-B-D
+>
 > 语句 C 和语句 D 不具备原子性，因此也有可能被重排
 > getInstance 操作如果被重排，那么 instance 会存在一种 “不为 null 但是仍然未被初始化” 的状态，即已经给 instance 分配了内存空间但是并没有调用 Singleton 的构造方法来初始化 instance，执行判空的线程抢在了初始化的操作完成之前，则直接返回 instance 肯定会报错
+> 
 > 于是有了最终版本，添加 volatile 关键字
 
 ```

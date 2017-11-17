@@ -142,25 +142,25 @@ public class TenderEnemy implements Enemy {
 ```
 
 ```
-    // 古代战争和强大的敌人
-    War war1 = new AncientWar(new IntrepidEnemy());
-    // 战争开始
-    war1.startWar();
-    // 战争进行中
-    war1.combatting();
-    war1.stopWar();
-    // 战争结束
-    LOGGER.info("\n");
-    
-    // 现代战争和不堪一击的敌人
-    War war2 = new MordernWar(new TenderEnemy());
-    // 战争开始
-    war2.startWar();
-    // 战争进行中
-    war2.combatting();
-    // 战争结束
-    war2.stopWar();
-    LOGGER.info("\n");
+// 古代战争和强大的敌人
+War war1 = new AncientWar(new IntrepidEnemy());
+// 战争开始
+war1.startWar();
+// 战争进行中
+war1.combatting();
+war1.stopWar();
+// 战争结束
+LOGGER.info("\n");
+
+// 现代战争和不堪一击的敌人
+War war2 = new MordernWar(new TenderEnemy());
+// 战争开始
+war2.startWar();
+// 战争进行中
+war2.combatting();
+// 战争结束
+war2.stopWar();
+LOGGER.info("\n");
 ```
 
 ## 适用场景

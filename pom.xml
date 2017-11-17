@@ -51,6 +51,7 @@
         <module>factory-method</module>
         <module>prototype</module>
         <module>singleton</module>
+        <module>bridge</module>
     </modules>
 
     <dependencies>

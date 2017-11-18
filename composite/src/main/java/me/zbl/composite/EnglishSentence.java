@@ -30,8 +30,6 @@ import java.util.List;
  */
 public class EnglishSentence extends CharacterComposite {
 
-  private List<EnglishWord> words;
-
   public EnglishSentence(List<EnglishWord> words) {
     for (EnglishWord word : words) {
       add(word);

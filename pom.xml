@@ -52,6 +52,7 @@
         <module>prototype</module>
         <module>singleton</module>
         <module>bridge</module>
+        <module>composite</module>
     </modules>
 
     <dependencies>

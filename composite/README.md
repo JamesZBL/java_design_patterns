@@ -19,7 +19,129 @@ Composite使得用户对单个对象和组合对象的使用具有一致性。
 ## 实例分析
 在中文中，一句话是由词语组成的，而词语又由字组成；在英文中，句子由单词组成，而单词又由一个个字母组成。每个对象都可定义的它之前的或之后的内容。比如一个中文句子总是以句号结尾，一个英文单词之前通常是有空格的。这种结构可以形成了递归嵌套的结构，句子是父容器，单词是子容器，字母是叶节点。
 ![](./uml/Character.png)
-CharacterComposite 定义了所有容器类或叶节点的接口，容器应当实现的功能有：获取子组件、对子组件进行计数、添加子组件、删除子组件。Sentence(句子) 和 Word (单词)都属于容器，而 Character (字母)则属于叶节点，因为字母中无法再添加子组件了，它是层次结构中的最末端。
+CharacterComposite 是一个抽象类，定义了所有容器类或叶节点的接口，容器应当实现的功能有：获取子组件、对子组件进行计数、定义组件的格式化输出规则。Sentence(句子) 和 Word (单词)都属于容器，而 Character (字母)则属于叶节点，因为字母中无法再添加子组件了，它是层次结构中的最末端。
+```
+/**
+ * 所有容器的抽象父类
+ */
+public abstract class CharacterComposite {
+
+  private List<CharacterComposite> children = new ArrayList<>();
+
+  public void add(CharacterComposite character) {
+    children.add(character);
+  }
+
+  public int count() {
+    return this.children.size();
+  }
+
+  public void printBefore() {
+  }
+
+  public void printAfter() {
+  }
+
+  public void print() {
+    printBefore();
+    for (CharacterComposite item : children) {
+      item.print();
+    }
+    printAfter();
+  }
+}
+```
+EnglishWord 组件前应当输出一个空格，EnglishSentence 组件后应当输出一个“.”，ChineseSentence 组件后应当输出一个“。”等。
+```
+/**
+ * 英文句子
+ */
+public class EnglishSentence extends CharacterComposite {
+
+  public EnglishSentence(List<EnglishWord> words) {
+    for (EnglishWord word : words) {
+      add(word);
+    }
+  }
+
+  @Override
+  public void printAfter() {
+    System.out.println(".");
+  }
+}
+```
+
+```
+/**
+ * 英文单词
+ */
+public class EnglishWord extends CharacterComposite {
+
+  public EnglishWord(List<Character> characters) {
+    for (Character c : characters) {
+      add(c);
+    }
+  }
+
+  @Override
+  public void printBefore() {
+    System.out.print(" ");
+  }
+}
+```
+Word 作为 Sentence 的子容器，Character 作为 Word 的子组件，属于叶节点。
+```
+/**
+ * 字母
+ */
+public class Character extends CharacterComposite {
+
+  private char c;
+
+  public Character(char c) {
+    this.c = c;
+  }
+
+  @Override
+  public void print() {
+    System.out.print(c);
+  }
+}
+```
+Writer 为句子生成器，各个组件及子组件均由它负责填充，最终形成一个完成的结构。
+```
+/**
+ * 语句生成器
+ */
+public class Writer {
+
+  public CharacterComposite sentenceByChinese() {
+    List<ChineseWord> words = new ArrayList<>();
+
+    words.add(new ChineseWord(Arrays.asList(new Character('我'))));
+    words.add(new ChineseWord(Arrays.asList(new Character('是'))));
+    words.add(new ChineseWord(Arrays.asList(new Character('来'), new Character('自'))));
+    words.add(new ChineseWord(Arrays.asList(new Character('北'), new Character('京'))));
+    words.add(new ChineseWord(Arrays.asList(new Character('的'))));
+    words.add(new ChineseWord(Arrays.asList(new Character('小'), new Character('明'))));
+
+    return new ChineseSentence(words);
+  }
+
+  public CharacterComposite sentenceByEnglish() {
+    List<EnglishWord> words = new ArrayList<>();
+
+    words.add(new EnglishWord(Arrays.asList(new Character('I'))));
+    words.add(new EnglishWord(Arrays.asList(new Character('a'), new Character('m'))));
+    words.add(new EnglishWord(Arrays.asList(new Character('a'))));
+    words.add(new EnglishWord(Arrays.asList(new Character('s'), new Character('t'), new Character('u'), new Character('d'), new Character('e'), new Character('n'), new Character('t'))));
+    words.add(new EnglishWord(Arrays.asList(new Character('f'), new Character('r'), new Character('o'), new Character('m'))));
+    words.add(new EnglishWord(Arrays.asList(new Character('L'), new Character('o'), new Character('n'), new Character('d'), new Character('o'), new Character('n'))));
+
+    return new EnglishSentence(words);
+  }
+}
+```
 
 ## 效果
 * Composite 模式定义了基本对象和组合对象的基本层次结构，基本对象可以组合形成更复杂的对象，这个对象还可以再次进行组合，依次类推，可以实现无限层的递归嵌套结构，上文中提到的句子-单词-字母结构即是如此。
@@ -28,3 +150,5 @@ CharacterComposite 定义了所有容器类或叶节点的接口，容器应当�
 * 使代码结构更具通用性，但也存在一些问题。增加组件很方便，但无法对子组件做过多的限制，即使客户希望在容器中只增加某种特定的组件，由于使用 Composite 而无法依靠别的类做过多的约束，这些检验类型的工作就要放到运行时去做了
 
 ## 适用场景
+* 你想表示对象的部分-整体层次结构
+* 你希望用户忽略组合对象与单个对象的不同， 用户将统一地使用组合结构中的所有对象

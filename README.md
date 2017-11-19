@@ -40,4 +40,6 @@
 
 [Bridge (桥接模式)](https://github.com/JamesZBL/java_design_patterns/tree/master/bridge)
 
+[Composite (组合模式)](https://github.com/JamesZBL/java_design_patterns/tree/master/composite)
+
 ### 行为模式

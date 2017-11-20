@@ -55,12 +55,13 @@ public class WriterTest {
   @Test
   public void sentenceByChinese() throws Exception {
     final Writer writer = new Writer();
-    // TODO: 17-11-19 testWriter()
+    testWriterCn(writer.sentenceByChinese(), "我是来自北京的小明。");
   }
 
   @Test
   public void sentenceByEnglish() throws Exception {
-    // TODO: 17-11-19  testWriter()
+    final Writer writer = new Writer();
+    testWriter(writer.sentenceByEnglish(), "I am a student from London.");
   }
 
   /**
@@ -70,9 +71,23 @@ public class WriterTest {
    * @param expectedString 期望值
    */
   private void testWriter(final CharacterComposite givenComposite, final String expectedString) {
-    final String[] words = expectedString.split(" ");
+    final String[] words = expectedString.trim().split(" ");
     assertNotNull(givenComposite);
     assertEquals(givenComposite.count(), words.length);
+
+    givenComposite.print();
+
+    assertEquals(expectedString, new String(this.stdOutBuffer.toByteArray()).trim());
+  }
+
+  /**
+   * 测试输出是否和预期相等_中文
+   *
+   * @param givenComposite 输入的组件
+   * @param expectedString 期望值
+   */
+  private void testWriterCn(final CharacterComposite givenComposite, final String expectedString) {
+    assertNotNull(givenComposite);
 
     givenComposite.print();
 

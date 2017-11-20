@@ -53,6 +53,7 @@
         <module>singleton</module>
         <module>bridge</module>
         <module>composite</module>
+        <module>decorator</module>
     </modules>
 
     <dependencies>

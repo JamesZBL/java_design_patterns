@@ -42,4 +42,6 @@
 
 [Composite (组合模式)](https://github.com/JamesZBL/java_design_patterns/tree/master/composite)
 
+[Decorator (装饰模式)](https://github.com/JamesZBL/java_design_patterns/tree/master/decorator)
+
 ### 行为模式

@@ -29,12 +29,12 @@ import org.slf4j.LoggerFactory;
 /**
  * 铁匠
  */
-public class HammerSmith implements Operation {
+public class HammerSmithOperation implements Operation {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(HammerSmith.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(HammerSmithOperation.class);
   private Operation previousOperation;
 
-  public HammerSmith(Operation previousOperation) {
+  public HammerSmithOperation(Operation previousOperation) {
     this.previousOperation = previousOperation;
   }
 

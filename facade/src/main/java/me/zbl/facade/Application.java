@@ -24,12 +24,14 @@
 package me.zbl.facade;
 
 /**
- * 学生
+ * Facade
  */
-public class CourseStudent extends CourseParticipator {
+public class Application {
 
-  @Override
-  public String name() {
-    return "学生";
+  public static void main(String[] args) {
+    CourseFacade participator = new CourseFacade();
+    participator.prepare();
+    participator.proceed();
+    participator.stop();
   }
 }

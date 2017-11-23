@@ -24,12 +24,12 @@
 package me.zbl.facade;
 
 /**
- * 学生
+ * 教师
  */
-public class CourseStudent extends CourseParticipator {
+public class CourseTeacher extends CourseParticipator {
 
   @Override
   public String name() {
-    return "学生";
+    return "老师";
   }
 }

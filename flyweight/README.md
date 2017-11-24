@@ -32,6 +32,190 @@ Flyweight模式的有效性很大程度上取决于如何使用它以及在何�
 
 ## 实例分析
 
+![](https://raw.githubusercontent.com/JamesZBL/java_design_patterns/develop/flyweight/uml/Weapon.png)
 
+出售武器的商店里摆满了各式的枪。许多枪的型号是一样的，所以不需要为每一个都创建新的对象。相反，一个对象实例可以表示多个货架项目，因此内存占用空间很小。
 
+所有的枪都可以发出射击这个动作，因此定义一个枪的接口 Shooting
+```
+public interface Shooting {
+
+  void shoot();
+}
+```
+
+商店里的枪可以大致分为手枪、步枪、狙击枪和冲锋枪，分别定义四种枪类，它们都实现 Shooting 接口
+```
+/**
+ * 手枪
+ */
+public class HandGun implements Shooting {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(HandGun.class);
+
+  @Override
+  public void shoot() {
+    LOGGER.info("手枪开火了(Hash={})", System.identityHashCode(this));
+  }
+}
+```
+```
+/**
+ * 步枪
+ */
+public class Musket implements Shooting {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Musket.class);
+
+  @Override
+  public void shoot() {
+    LOGGER.info("步枪开火了(Hash={})", System.identityHashCode(this));
+  }
+}
+```
+
+```
+/**
+ * 狙击枪
+ */
+public class Sniper implements Shooting {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Sniper.class);
+
+  @Override
+  public void shoot() {
+    LOGGER.info("狙击枪开火了(Hash={})", System.identityHashCode(this));
+  }
+}
+```
+
+```
+/**
+ * 冲锋枪
+ */
+public class Submachine implements Shooting {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Submachine.class);
+
+  @Override
+  public void shoot() {
+    LOGGER.info("冲锋枪开火了(Hash={})", System.identityHashCode(this));
+  }
+}
+```
+
+武器的生成由武器工厂类完成，同一种枪只存在一个对象
+```
+/**
+ * 武器工厂
+ */
+public class GunFactory {
+
+  private Map<GunType, Shooting> gunRepo;
+
+  public GunFactory() {
+    gunRepo = new EnumMap<GunType, Shooting>(GunType.class);
+  }
+
+  public Shooting createGun(GunType type) {
+    Shooting gun = gunRepo.get(type);
+    if (null == gun) {
+      switch (type) {
+        case HANDGUN: {
+          gun = new HandGun();
+          gunRepo.put(HANDGUN, gun);
+          break;
+        }
+        case MUSKET: {
+          gun = new Musket();
+          gunRepo.put(MUSKET, gun);
+          break;
+        }
+        case SNIPER: {
+          gun = new Sniper();
+          gunRepo.put(SNIPER, gun);
+          break;
+        }
+        case SUBMACHINE: {
+          gun = new Submachine();
+          gunRepo.put(SUBMACHINE, gun);
+          break;
+        }
+      }
+    }
+    return gun;
+  }
+}
+```
+
+武器商店使用武器工厂获得各种枪，放到两个不同的货架上
+```
+/**
+ * 武器商店
+ */
+public class WeaponShop {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(WeaponShop.class);
+
+  private List<Shooting> shelfA;
+  private List<Shooting> shelfB;
+
+  public WeaponShop() {
+    shelfA = new ArrayList<>();
+    shelfB = new ArrayList<>();
+    fillShelves();
+  }
+
+  private void fillShelves() {
+    GunFactory factory = new GunFactory();
+
+    shelfA.add(factory.createGun(HANDGUN));
+    shelfA.add(factory.createGun(HANDGUN));
+    shelfA.add(factory.createGun(MUSKET));
+    shelfA.add(factory.createGun(MUSKET));
+    shelfA.add(factory.createGun(SNIPER));
+    shelfA.add(factory.createGun(SNIPER));
+    shelfA.add(factory.createGun(MUSKET));
+    shelfA.add(factory.createGun(HANDGUN));
+
+    shelfB.add(factory.createGun(SUBMACHINE));
+    shelfB.add(factory.createGun(SUBMACHINE));
+    shelfB.add(factory.createGun(SUBMACHINE));
+    shelfB.add(factory.createGun(SNIPER));
+  }
+
+  public final List<Shooting> getGunsOnShelfA() {
+    return Collections.unmodifiableList(shelfA);
+  }
+
+  public final List<Shooting> getGunOnShelfB() {
+    return Collections.unmodifiableList(shelfB);
+  }
+
+  public void enumrateShelves() {
+    enumerateShelfA();
+    enumerateShelfB();
+  }
+
+  private void enumerateShelfA() {
+    LOGGER.info("从A货架上拿走所有武器");
+    for (Shooting gun : shelfA) {
+      gun.shoot();
+    }
+  }
+
+  private void enumerateShelfB() {
+    LOGGER.info("从B货架上拿走所有武器");
+    for (Shooting gun : shelfB) {
+      gun.shoot();
+    }
+  }
+}
+```
+
+使用
+```
+    WeaponShop shop = new WeaponShop();
+    shop.enumrateShelves();
+```
 ## 效果

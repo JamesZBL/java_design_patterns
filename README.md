@@ -23,25 +23,25 @@
 
 ### 构建型模式
 
-* Builder (创建者)
+* Builder （创建者）
 
-* Abstract Factory (抽象工厂)
+* Abstract Factory （抽象工厂）
 
-* Factory Method (工厂方法)
+* Factory Method （工厂方法）
 
-* Prototype (原型模式)
+* Prototype （原型模式）
 
-* Singleton (单例模式)
+* Singleton （单例模式）
 
 
 ### 结构型模式
 
-* Adapter (适配器)
+* Adapter （适配器）
 
-* Bridge (桥接模式)
+* Bridge （桥接模式）
 
-* Composite (组合模式)
+* Composite （组合模式）
 
-* Decorator (装饰模式)
+* Decorator （装饰模式）
 
 ### 行为模式

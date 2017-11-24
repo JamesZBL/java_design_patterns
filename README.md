@@ -23,25 +23,25 @@
 
 ### 构建型模式
 
-[Builder (创建者)](tree/master/builder) 
+[Builder (创建者)](/tree/master/builder) 
 
-[Abstract Factory (抽象工厂)](tree/master/abstract-factory)
+[Abstract Factory (抽象工厂)](/tree/master/abstract-factory)
 
-[Factory Method (工厂方法)](tree/master/factory-method)
+[Factory Method (工厂方法)](/tree/master/factory-method)
 
-[Prototype (原型模式)](tree/master/prototype)
+[Prototype (原型模式)](/tree/master/prototype)
 
-[Singleton (单例模式)](tree/master/singleton)
+[Singleton (单例模式)](/tree/master/singleton)
 
 
 ### 结构型模式
 
-[Adapter (适配器)](tree/master/adapter)
+[Adapter (适配器)](/tree/master/adapter)
 
-[Bridge (桥接模式)](tree/master/bridge)
+[Bridge (桥接模式)](/tree/master/bridge)
 
-[Composite (组合模式)](tree/master/composite)
+[Composite (组合模式)](/tree/master/composite)
 
-[Decorator (装饰模式)](tree/master/decorator)
+[Decorator (装饰模式)](/tree/master/decorator)
 
 ### 行为模式

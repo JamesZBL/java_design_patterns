@@ -53,3 +53,5 @@
 ### 行为模式
 
 * Chain of Responsibility （职责链模式）
+
+* Command （命令模式）

@@ -51,3 +51,5 @@
 * Proxy （代理模式）
 
 ### 行为模式
+
+* Chain of Responsibility （职责链模式）

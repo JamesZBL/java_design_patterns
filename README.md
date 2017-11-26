@@ -56,7 +56,7 @@
 
 * Command （命令模式）
 
-* Interpreter （解释模式）
+* Interpreter （解释器模式）
 
 * Iterator（迭代器模式）
 

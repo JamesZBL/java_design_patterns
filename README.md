@@ -63,3 +63,5 @@
 * Mediator（中介者模式）
 
 * Memento（备忘录模式）
+
+* Observer（观察者模式）

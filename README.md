@@ -1,5 +1,5 @@
-
 # Java 实现的面向对象软件设计模式
+
 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/JamesZBL/java_design_patterns/blob/master/LICENSE)
 [![Build status](https://travis-ci.org/JamesZBL/java_design_patterns.svg?branch=master)](https://travis-ci.org/JamesZBL/java_design_patterns)
@@ -69,3 +69,5 @@
 * State（状态模式）
 
 * Strategy （策略模式）
+
+* Template Method （模板方法）

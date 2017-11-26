@@ -45,6 +45,6 @@ public class Item {
 
   @Override
   public String toString() {
-    return super.toString();
+    return name;
   }
 }

@@ -23,9 +23,11 @@
  */
 
 /**
- * 元素类型
+ * 迭代器接口
  */
-public enum ItemType {
+public interface ItemIterator {
 
-  IT, FICTION, CARTOON
+  boolean hasNext();
+
+  Item next();
 }

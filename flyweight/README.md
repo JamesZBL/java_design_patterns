@@ -15,7 +15,7 @@ Flyweight模式的有效性很大程度上取决于如何使用它以及在何�
 
 ## 模式要点
 
-![](https://github.com/JamesZBL/java_design_patterns/raw/develop/flyweight/uml/Flyweight.png)
+![](./uml/Flyweight.png)
 
 ### 组成部分
 
@@ -32,7 +32,7 @@ Flyweight模式的有效性很大程度上取决于如何使用它以及在何�
 
 ## 实例分析
 
-![](https://raw.githubusercontent.com/JamesZBL/java_design_patterns/develop/flyweight/uml/Weapon.png)
+![](./uml/Weapon.png)
 
 出售武器的商店里摆满了各式的枪。许多枪的型号是一样的，所以不需要为每一个都创建新的对象。相反，一个对象实例可以表示多个货架项目，因此内存占用空间很小。
 

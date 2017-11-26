@@ -67,3 +67,5 @@
 * Observer（观察者模式）
 
 * State（状态模式）
+
+* Strategy （策略模式）

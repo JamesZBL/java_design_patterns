@@ -43,6 +43,6 @@ public class PlusExpression extends Expression {
 
   @Override
   public String toString() {
-    return "加法表达式";
+    return "+";
   }
 }

@@ -43,6 +43,6 @@ public class MultipleExpression extends Expression {
 
   @Override
   public String toString() {
-    return "乘法表达式";
+    return "*";
   }
 }

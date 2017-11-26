@@ -43,6 +43,6 @@ public class MinusExpression extends Expression {
 
   @Override
   public String toString() {
-    return "减法表达式";
+    return "-";
   }
 }

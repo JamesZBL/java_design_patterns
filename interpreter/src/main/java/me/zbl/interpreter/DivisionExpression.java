@@ -43,6 +43,6 @@ public class DivisionExpression extends Expression {
 
   @Override
   public String toString() {
-    return "除法表达式";
+    return "/";
   }
 }

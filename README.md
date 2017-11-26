@@ -55,3 +55,5 @@
 * Chain of Responsibility （职责链模式）
 
 * Command （命令模式）
+
+* Interpreter （解释模式）

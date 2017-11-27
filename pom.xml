@@ -64,6 +64,7 @@
         <module>mediator</module>
         <module>memento</module>
         <module>observer</module>
+        <module>state</module>
     </modules>
 
     <dependencies>

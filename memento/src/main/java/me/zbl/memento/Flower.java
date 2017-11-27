@@ -71,6 +71,11 @@ public class Flower implements Plant {
     setWeight(flowerMemento.getWeight());
   }
 
+  @Override
+  public String toString() {
+    return String.format("名称：%s\t状态：%s\t质量：%d克\t高度：%d厘米", getName(), getType(), getWeight(), getHeight());
+  }
+
   public Flower(FlowerType type, String name, int height, int weight) {
     this.type = type;
     this.name = name;

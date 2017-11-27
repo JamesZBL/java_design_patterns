@@ -111,9 +111,9 @@ public class HammerSmithOperation implements Operation {
 /**
  * Decorator
  */
-public class Application {
+public class me.zbl.ovserver.Application {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(me.zbl.ovserver.Application.class);
 
   public static void main(String[] args) {
     LOGGER.info("仅由木匠制作锤把");

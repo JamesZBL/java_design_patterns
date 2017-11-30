@@ -21,22 +21,49 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package me.zbl.template.method;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Template method
+ * 学习方法的抽象类
  */
-public class Application {
+public abstract class LearningMethod {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(LearningMethod.class);
 
-  public static void main(String[] args) {
-    Student student = new Student(new PositiveLearningMethod());
-    student.learn("上课走神", "同学");
-    LOGGER.info("更换学习方法");
-    student.changeMethod(new NegativeLearinngMethod());
-    student.learn("认证听讲", "老师");
+  /**
+   * 预习效果
+   *
+   * @return
+   */
+  protected abstract String preLearning();
+
+  /**
+   * 状态
+   *
+   * @param description 学习状态
+   */
+  protected abstract void Learning(String description);
+
+  /**
+   * 请教对象
+   *
+   * @param adviser 请教对象
+   */
+  protected abstract void afterLearning(String adviser);
+
+  /**
+   * 学习过程
+   *
+   * @param description 听课状态
+   * @param adviser     请假对象
+   */
+  public void learn(String description, String adviser) {
+    String preLearningResult = preLearning();
+    LOGGER.info("{}", preLearningResult);
+    Learning(description);
+    afterLearning(adviser);
   }
 }

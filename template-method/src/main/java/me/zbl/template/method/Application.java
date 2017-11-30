@@ -21,31 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package me.zbl.template.method;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 消极的学习方法
+ * Template method
  */
-public class NegativeLearinngMethod extends LearningMethod {
+public class Application {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(NegativeLearinngMethod.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
-  @Override
-  protected String preLearning() {
-    return "几乎没有预习，对上课要学的内容一无所知";
-  }
-
-  @Override
-  protected void Learning(String description) {
-    LOGGER.info("学习状态：{}", description);
-  }
-
-  @Override
-  protected void afterLearning(String adviser) {
-    if (!adviser.equals("")) {
-      LOGGER.info("只有很少的知识点没有听懂，于是找{}提问", adviser);
-    }
+  public static void main(String[] args) {
+    Student student = new Student(new PositiveLearningMethod());
+    student.learn("上课走神", "同学");
+    LOGGER.info("更换学习方法");
+    student.changeMethod(new NegativeLearinngMethod());
+    student.learn("认证听讲", "老师");
   }
 }

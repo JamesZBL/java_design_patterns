@@ -21,31 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package me.zbl.visitor;
 
 /**
- * 积极的学习方法
+ * 老板
  */
-public class PositiveLearningMethod extends LearningMethod {
+public class Boss extends Unit {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(PositiveLearningMethod.class);
-
-  @Override
-  protected String preLearning() {
-    return "预习到位，为听课打下很好的基础";
+  public Boss(Unit... children) {
+    super(children);
   }
 
   @Override
-  protected void Learning(String description) {
-    LOGGER.info("学习状态：{}", description);
+  public void beVisited(UnitVisitor visitor) {
+    visitor.visitBoss(this);
+    super.beVisited(visitor);
   }
 
   @Override
-  protected void afterLearning(String adviser) {
-    if (!adviser.equals("")) {
-      LOGGER.info("只有很少的知识点没有听懂，于是找{}提问", adviser);
-    }
+  public String toString() {
+    return "老板";
   }
 }

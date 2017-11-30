@@ -21,34 +21,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package me.zbl.visitor;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * 学生
+ * 老板的访问者
  */
-public class Student {
+public class BossVisitor implements UnitVisitor {
 
-  private LearningMethod method;
+  private static final Logger LOGGER = LoggerFactory.getLogger(BossVisitor.class);
 
-  public Student(LearningMethod method) {
-    this.method = method;
+  @Override
+  public void visitEngineer(Engineer engineer) {
+
   }
 
-  /**
-   * 学习
-   *
-   * @param description 状态
-   * @param adviser     请教对象
-   */
-  public void learn(String description, String adviser) {
-    method.learn(description, adviser);
+  @Override
+  public void visitBoss(Boss boss) {
+    LOGGER.info("你好，{}", boss);
   }
 
-  /**
-   * 更换学习方法
-   *
-   * @param method
-   */
-  public void changeMethod(LearningMethod method) {
-    this.method = method;
+  @Override
+  public void visitManager(Manager manager) {
+
   }
 }

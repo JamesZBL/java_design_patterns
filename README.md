@@ -4,7 +4,6 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/JamesZBL/java_design_patterns/blob/master/LICENSE)
 [![Build status](https://travis-ci.org/JamesZBL/java_design_patterns.svg?branch=master)](https://travis-ci.org/JamesZBL/java_design_patterns)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/java_design_patterns/)
-## 介绍
 
 设计模式（Design pattern）是用于面向对象程序设计的、有效提高代码重用效率、有着明确使用场景分类的程序设计规范的总结。使用设计模式的
 目的：为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。 设计模式使代码编写真正工程化；设计模式是软件工程的基石脉络，如同大厦
